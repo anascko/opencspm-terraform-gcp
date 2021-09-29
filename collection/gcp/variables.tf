@@ -100,7 +100,7 @@ variable "iam_collection_crontab" {
 }
 variable "collection_bucket_location" {
   description = "The location of the bucket.  US or EU are common choices"
-  default     = "US"
+  default     = "EU"
   type        = string
 }
 variable "collection_bucket_lifecycle_storage_class_downgrade_name" {
@@ -143,7 +143,7 @@ variable "backup_bucket_lifecycle_delete_all_data_after_num_days" {
 variable "cloud_run_location" {
   description = "A geo where cloud run should live"
   type        = string
-  default     = "us-central"
+  default     = "europe-west"
 }
 
 ## Collection - Cloud Run CAI Exporter
