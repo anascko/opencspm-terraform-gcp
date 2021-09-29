@@ -138,7 +138,7 @@ resource "google_compute_router_nat" "opencspm-nat" {
   name                               = "opencspm-nat"
   router                             = google_compute_router.opencspm-router.name
   region                             = google_compute_router.opencspm-router.region
-  nat_ip_allocate_option             = "AUTO_ONLY"
+  nat_ip_allocate_option             = "MANUAL_ONLY"
   nat_ips                            = google_compute_address.external_address.*.self_link
   source_subnetwork_ip_ranges_to_nat = "ALL_SUBNETWORKS_ALL_IP_RANGES"
 
