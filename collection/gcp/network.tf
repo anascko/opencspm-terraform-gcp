@@ -5,7 +5,7 @@ resource "google_compute_network" "opencspm-network" {
   description = "OpenCSPM VPC"
 
   auto_create_subnetworks = false
-  routing_mode            = "REGIONAL"
+  #routing_mode            = "REGIONAL"
 }
 
 # Create a single regional subnet
@@ -122,9 +122,9 @@ resource "google_compute_router" "opencspm-router" {
   region  = google_compute_subnetwork.opencspm-subnet.region
   network = google_compute_network.opencspm-network.id
 
-  bgp {
+  /*bgp {
     asn = 64514
-  }
+  }*/
 }
 
 resource "google_compute_address" "external_address" {
