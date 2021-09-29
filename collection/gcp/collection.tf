@@ -51,8 +51,9 @@ resource "google_service_account" "invoker-sa" {
 resource "google_storage_bucket_iam_member" "collection-project-cai-bucket-writer" {
   bucket = module.collection-bucket.name
   role   = "roles/storage.legacyBucketWriter"
-  member = "serviceAccount:service-${google_project.collection-project.number}@gcp-sa-cloudasset.iam.gserviceaccount.com"
-
+  # SA  {google_project.collection-project.number} should be created
+  #member = "serviceAccount:service-${google_project.collection-project.number}@gcp-sa-cloudasset.iam.gserviceaccount.com"
+  member = "serviceAccount:${google_service_account.invoker-sa.email}"
   depends_on = [google_project_service.enabled-apis]
 }
 
@@ -61,8 +62,8 @@ resource "google_project_iam_member" "managed-cai-sa-encrypt-decrypt" {
   project = google_project.collection-project.project_id
 
   role   = "roles/cloudkms.cryptoKeyEncrypter"
-  member = "serviceAccount:service-${google_project.collection-project.number}@gcp-sa-cloudasset.iam.gserviceaccount.com"
-
+  #member = "serviceAccount:service-${google_project.collection-project.number}@gcp-sa-cloudasset.iam.gserviceaccount.com"
+  member = "serviceAccount:${google_service_account.invoker-sa.email}"
   depends_on = [google_project_service.enabled-apis]
 }
 
