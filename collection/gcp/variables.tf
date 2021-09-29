@@ -100,7 +100,7 @@ variable "iam_collection_crontab" {
 }
 variable "collection_bucket_location" {
   description = "The location of the bucket.  US or EU are common choices"
-  default     = "europe-west3"
+  default     = "EU"
   type        = string
 }
 variable "collection_bucket_lifecycle_storage_class_downgrade_name" {
