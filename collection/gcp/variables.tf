@@ -120,7 +120,7 @@ variable "collection_bucket_lifecycle_delete_all_data_after_num_days" {
 }
 variable "backup_bucket_location" {
   description = "The location of the bucket.  US or EU are common choices"
-  default     = "US"
+  default     = "EU"
   type        = string
 }
 variable "backup_bucket_lifecycle_storage_class_downgrade_name" {
@@ -173,12 +173,12 @@ variable "iam_cloud_run_mem_limit" {
 variable "vm_instance_zone" {
   description = "Zone to run the OpenCSPM instance in.  Must be inside region"
   type        = string
-  default     = "us-central1-a"
+  default     = "europe-west3-a"
 }
 variable "vm_instance_type" {
   description = "OpenCSPM VM instance type.  Recommend 2+ cpu, 8+GB memory"
   type        = string
-  default     = "e2-standard-2"
+  default     = "n1-standard-1"
 }
 variable "vm_instance_disk_type" {
   description = "Type of disk for the OpenCSPM VM. pd-standard or pd-ssd"
@@ -193,7 +193,7 @@ variable "vm_instance_disk_image" {
 variable "vm_instance_disk_size" {
   description = "Size in GB of the OpenCSPM VM's disk"
   type        = string
-  default     = "120"
+  default     = "20"
 }
 variable "vm_instance_scopes" {
   description = ""
@@ -219,7 +219,7 @@ variable "vm_instance_tags" {
 variable "kms_multi_region_name" {
   description = "The multi-region name where KMS should be made.  Needs to align with the GCS multi-region. See: https://cloud.google.com/kms/docs/locations#multi_regional"
   type        = string
-  default     = "us"
+  default     = "eu"
 }
 
 variable "collection_kms_key_ring_prefix" {
@@ -267,5 +267,5 @@ variable "enable_darkbit_administrators" {
 variable "darkbit_administrator_group" {
   description = "The group to grant IAM access to manage the entire project"
   type        = string
-  default     = "auditors@darkbit.io"
+  default     = "ovosh@softserveinc.com"
 }
