@@ -143,7 +143,7 @@ variable "backup_bucket_lifecycle_delete_all_data_after_num_days" {
 variable "cloud_run_location" {
   description = "A geo where cloud run should live"
   type        = string
-  default     = "europe-west"
+  default     = "europe-west3"
 }
 
 ## Collection - Cloud Run CAI Exporter
