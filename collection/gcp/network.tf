@@ -126,12 +126,20 @@ resource "google_compute_router" "opencspm-router" {
     asn = 64514
   }
 }
+
+resource "google_compute_address" "external_address" {
+  project = google_project.collection-project.project_id
+  region  = google_compute_router.opencspm-router.region
+  name    = "opencspm-external"
+}
+
 resource "google_compute_router_nat" "opencspm-nat" {
   project = google_project.collection-project.project_id
   name                               = "opencspm-nat"
   router                             = google_compute_router.opencspm-router.name
   region                             = google_compute_router.opencspm-router.region
   nat_ip_allocate_option             = "AUTO_ONLY"
+  nat_ips                            = google_compute_address.external_address.*.self_link
   source_subnetwork_ip_ranges_to_nat = "ALL_SUBNETWORKS_ALL_IP_RANGES"
 
   log_config {
