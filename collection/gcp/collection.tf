@@ -3,8 +3,8 @@
 # An empty GAE app is required for Cloud Run
 resource "google_app_engine_application" "placeholder-app" {
   project     = google_project.collection-project.project_id
-  #location_id = var.cloud_run_location
-  location_id = "europe-west1"
+  location_id = var.cloud_run_location
+  #location_id = "europe-west"
 }
 
 ## IAM
