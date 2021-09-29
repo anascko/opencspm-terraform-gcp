@@ -219,7 +219,7 @@ variable "vm_instance_tags" {
 variable "kms_multi_region_name" {
   description = "The multi-region name where KMS should be made.  Needs to align with the GCS multi-region. See: https://cloud.google.com/kms/docs/locations#multi_regional"
   type        = string
-  default     = "eu"
+  default     = "europe-west3"
 }
 
 variable "collection_kms_key_ring_prefix" {
