@@ -42,7 +42,7 @@ variable "iam_exporter_image" {
 variable "region" {
   description = "The primary region for OpenCSPM"
   type        = string
-  default     = "us-central1"
+  default     = "europe-west3"
 }
 variable "subnet_cidr" {
   description = "The CIDR for the OpenCSPM GCE Subnet"

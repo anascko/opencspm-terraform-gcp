@@ -25,7 +25,7 @@ resource "google_kms_crypto_key" "opencspm-collection-key" {
 # The collection bucket
 module "collection-bucket" {
   source  = "terraform-google-modules/cloud-storage/google"
-  version = "~> 1.7"
+  version = "~> 2.2"
 
   project_id = google_project.collection-project.project_id
   prefix     = var.collection_bucket_prefix
@@ -103,7 +103,7 @@ resource "google_kms_crypto_key" "opencspm-backup-key" {
 
 module "backup-bucket" {
   source  = "terraform-google-modules/cloud-storage/google"
-  version = "~> 1.7"
+  version = "~> 2.2"
 
   project_id = google_project.collection-project.project_id
   prefix     = var.backup_bucket_prefix
