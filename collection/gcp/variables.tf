@@ -100,7 +100,7 @@ variable "iam_collection_crontab" {
 }
 variable "collection_bucket_location" {
   description = "The location of the bucket.  US or EU are common choices"
-  default     = "EU"
+  default     = "europe-west3"
   type        = string
 }
 variable "collection_bucket_lifecycle_storage_class_downgrade_name" {
@@ -120,7 +120,7 @@ variable "collection_bucket_lifecycle_delete_all_data_after_num_days" {
 }
 variable "backup_bucket_location" {
   description = "The location of the bucket.  US or EU are common choices"
-  default     = "EU"
+  default     = "europe-west3"
   type        = string
 }
 variable "backup_bucket_lifecycle_storage_class_downgrade_name" {
