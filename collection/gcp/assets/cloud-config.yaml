@@ -25,7 +25,7 @@ write_files:
     /usr/bin/docker login -u oauth2accesstoken -p "$${ACCESS}" https://gcr.io
     if [ ! -d /home/composer/opencspm ]; then
       cd /home/composer
-      git clone https://github.com/OpenCSPM/opencspm.git
+      git clone https://github.com/anascko/opencspm.git
 
       mkdir -p /home/composer/opencspm/config
       touch /home/composer/opencspm/config/config.yaml
