@@ -269,3 +269,9 @@ variable "darkbit_administrator_group" {
   type        = string
   default     = "ovosh@softserveinc.com"
 }
+
+variable "manage_ip" {
+  description = "Access to manage panel"
+  type = string
+  default = '0.0.0.0'
+}

@@ -19,6 +19,24 @@ resource "google_compute_subnetwork" "opencspm-subnet" {
 
   private_ip_google_access = true
 }
+# Alow access to manage ip
+resource "google_compute_firewall" "manage-access" {
+  project = google_project.collection-project.project_id
+  name    = "opencspm-manage-access"
+  network = google_compute_network.opencspm-network.id
+
+  direction = "INGRESS"
+  allow {
+    protocol = "tcp"
+  }
+  source_ranges = [var.manage_ip]
+  target_tags   = var.vm_instance_tags
+
+  priority = 1000
+  log_config {
+    metadata = "INCLUDE_ALL_METADATA"
+  }
+}
 
 # Allow SSH from IAP to GCE Instance
 resource "google_compute_firewall" "iap-access" {
