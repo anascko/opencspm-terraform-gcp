@@ -273,5 +273,5 @@ variable "darkbit_administrator_group" {
 variable "manage_ip" {
   description = "Access to manage panel"
   type = string
-  default = '0.0.0.0'
+  default = "0.0.0.0"
 }
