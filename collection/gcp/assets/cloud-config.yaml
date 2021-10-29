@@ -41,9 +41,9 @@ write_files:
 
     fi
     mkdir -p /home/composer/opencspm-controls
-    if [ ! -d /home/composer/opencspm-controls/opencspm-darkbit-community-controls ]; then
+    if [ ! -d /home/composer/opencspm-controls/opencspm-new-controls ]; then
       cd /home/composer/opencspm-controls
-      git clone https://github.com/OpenCSPM/opencspm-darkbit-community-controls.git
+      git clone https://github.com/anascko/opencspm-new-controls.git
     fi
 - path: /etc/systemd/system/composer.service
   permissions: 0644
